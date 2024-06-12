@@ -1,0 +1,54 @@
+<x-app-layout>
+
+    <div class="py-12">
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-1">
+            <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
+
+
+                <div class="mt-4">
+                    <a href="{{ route('agents.create') }}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Create</a>
+                </div>
+
+                <table class="table-auto w-full">
+                    <thead>
+                    <tr>
+                        <th class="px-4 py-2">ID</th>
+                        <th class="px-4 py-2">Name</th>
+                        <th class="px-4 py-2">Email</th>
+                        <th class="px-4 py-2">Created at</th>
+                        <th class="px-4 py-2">Actions</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    @foreach($agents as $agent)
+                        <tr>
+                            <td class="border px-4 py-2">{{ $agent->id }}</td>
+                            <td class="border px-4 py-2">{{ $agent->name }}</td>
+                            <td class="border px-4 py-2">{{ $agent->email }}</td>
+                            <td class="border px-4 py-2">{{ $agent->created_at }}</td>
+                            <td class="border px-4 py-2">
+                                <a href="{{ route('agents.show', $agent->id) }}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">View</a>
+                                <a href="{{ route('agents.edit', $agent->id) }}" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">Edit</a>
+                                <form action="{{ route('agents.destroy', $agent->id) }}" method="POST" class="inline">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit"
+                                            onclick="return confirm('Are you sure?')"
+                                            class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">Delete</button>
+                                </form>
+                            </td>
+                        </tr>
+                    @endforeach
+                    </tbody>
+                </table>
+
+
+
+
+
+
+            </div>
+
+        </div>
+    </div>
+</x-app-layout>
