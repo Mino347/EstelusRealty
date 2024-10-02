@@ -9,6 +9,9 @@ use Illuminate\Notifications\Notifiable;
 use Laravel\Fortify\TwoFactorAuthenticatable;
 use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Sanctum\HasApiTokens;
+use App\UserRole;
+
+
 
 class User extends Authenticatable implements MustVerifyEmail
 {
@@ -17,8 +20,6 @@ class User extends Authenticatable implements MustVerifyEmail
     use HasProfilePhoto;
     use Notifiable;
     use TwoFactorAuthenticatable;
-
-
 
     /**
      * The attributes that are mass assignable.
@@ -29,8 +30,11 @@ class User extends Authenticatable implements MustVerifyEmail
         'name',
         'email',
         'password',
+    ];
 
-
+    // Cast the role attribute to the UserRole enum
+    protected $casts = [
+        'role' => UserRole::class,
     ];
 
     /**
@@ -66,4 +70,7 @@ class User extends Authenticatable implements MustVerifyEmail
             'password' => 'hashed',
         ];
     }
+
+
+
 }

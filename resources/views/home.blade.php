@@ -6,9 +6,9 @@
 {{--    </x-slot>--}}
 
 
-    <div class="py-8">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
+{{--    <div class="py-8">--}}
+{{--        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">--}}
+{{--            <div class="bg-white overflow-hidden shadow-xl">--}}
 {{--                <x-welcome />--}}
 
                 <!DOCTYPE html>
@@ -18,48 +18,49 @@
                     <meta name="viewport" content="width=device-width, initial-scale=1.0">
                     <title>Estelus Realty</title>
                     <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+                    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
 
                     <style>
                         .bg-custom {
                             background-color: #DFD5C7;
                         }
-                        .bg-custom-color {
-                            background-color: #AFAA67;
-                        }
+                        /*.bg-custom-color {*/
+                        /*    background-color: #AFAA67;*/
+                        /*}*/
                     </style>
 
                 </head>
                 <body class="font-sans">
 
                 <!-- Navbar -->
-                <nav class="bg-gray-100 p-4">
-                    <div class="container mx-auto flex justify-between items-center">
-                        <div>
-                            <!-- <img src="https://via.placeholder.com/150x50" alt="Estetus Realty Logo" class="h-10"> -->
-                            <img src="{{ asset('Images/estelus realty logo.png') }}" alt="logo" class="block h-20 w-auto" />
-                        </div>
-                        <div class="hidden md:flex space-x-4">
-                            <a href="#" class="px-4">Home</a>
-                            <a href="#" class="px-4">Properties</a>
-                            <a href="#" class="px-4">About Us</a>
-                            <a href="#" class="px-4">Market Insights</a>
-                            <a href="#" class="px-4">Agents</a>
-                            <a href="#" class="bg-gray-300 px-4 py-2 rounded">Contact</a>
-                        </div>
-                    </div>
-                </nav>
+{{--                <nav class="bg-gray-100 p-4">--}}
+{{--                    <div class="container mx-auto flex justify-between items-center">--}}
+{{--                        <div>--}}
+{{--                            <!-- <img src="https://via.placeholder.com/150x50" alt="Estetus Realty Logo" class="h-10"> -->--}}
+{{--                            <img src="{{ asset('Images/estelus realty logo.png') }}" alt="logo" class="block h-20 w-auto" />--}}
+{{--                        </div>--}}
+{{--                        <div class="hidden md:flex space-x-4">--}}
+{{--                            <a href="#" class="px-4">Home</a>--}}
+{{--                            <a href="#" class="px-4">Properties</a>--}}
+{{--                            <a href="#" class="px-4">About Us</a>--}}
+{{--                            <a href="#" class="px-4">Market Insights</a>--}}
+{{--                            <a href="#" class="px-4">Agents</a>--}}
+{{--                            <a href="#" class="bg-gray-300 px-4 py-2 rounded">Contact</a>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </nav>--}}
 
                 <!-- Hero Section -->
-                <section class="bg-cover bg-center h-96 flex items-center justify-center" style="background-image:url('{{ asset('Images/Home page image.png') }}');">
-                    <div class="text-center text-white px-4">
-                        <h1 class="text-4xl font-bold">Unlock Sri Lanka’s Hidden Investment Gems</h1>
-                        <p class="mt-4">Effortless search. Personalized recommendations. Invest with confidence.</p>
-                        <button class="mt-6 bg-gray-900 text-white py-2 px-4 rounded">Explore</button>
+                <section class="bg-cover bg-center min-h-screen flex items-center justify-center" style="background-image:url('{{ asset('Images/Home page image.png') }}');">
+                    <div class="text-center text-white px-6">
+                        <h1 class="text-5xl font-semibold mb-8" style= "font-family: 'Libre Baskerville', serif;">Unlock Sri Lanka’s Hidden Investment Gems</h1>
+                        <p class="mt-5 mb-4 text-2xl" style="font-family: 'Open Sans', sans-serif;">Effortless search. Personalized recommendations. Invest with confidence.</p>
+                        <button class="mt-9 bg-gray-900 text-white py-5 px-7 text-2xl rounded">Explore</button>
                     </div>
                 </section>
 
                 <!-- Browse Properties -->
-                <section class="container mx-auto py-12 text-center px-4">
+                <section class="container mx-auto min-h-screen py-12 text-center px-4">
                     <h2 class="text-3xl font-bold mb-8">Browse Properties</h2>
                     <div class="flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-4">
                         <select class="border border-gray-300 py-2 px-10 rounded">
@@ -71,24 +72,20 @@
                         </select>
                         <select class="border border-gray-300 py-2 px-10 rounded">
                             <option>Property Type</option>
-                            <option>House</option>
-                            <option>Apartment</option>
-                            <option>Villa</option>
-
-                        </select>
-                        <select class="border border-gray-300 py-2 px-10 rounded">
-                            <option>Select Type</option>
-                            <option>Sale</option>
+                            <option>Residential</option>
+                            <option>Commercial</option>
                             <option>Land</option>
+                            <option>Industrial</option>
 
                         </select>
+
                         <button class="mt-6 bg-gray-900 text-white py-2 px-4 rounded">Browse</button>
 
                     </div>
                 </section>
 
                 <!-- Latest Properties -->
-                <section class="bg-custom py-12">
+                <section class="bg-custom py-12 min-h-screen">
                     <div class="container mx-auto text-center px-4">
                         <h2 class="text-3xl font-bold mb-8">Latest Properties</h2>
                         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -109,7 +106,7 @@
                 </section>
 
                 <!-- Customer Testimonials -->
-                <section class="container mx-auto py-20 text-center px-4">
+                <section class="container mx-auto py-20 text-center px-4 min-h-screen">
                     <h2 class="text-3xl font-bold mb-8">Customer Testimonials</h2>
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-14">
                         <div>
@@ -124,9 +121,11 @@
                 </section>
 
                 <!-- Footer -->
-                <footer class="bg-custom-color py-8">
+                <footer class="bg-gray-800 text-white h-96 py-12 px-4">
                     <div class="container mx-auto text-center px-4">
-                        <div class="mb-4">Estelus Realty</div>
+                        <div class="mb-4">
+                            <img src="{{ asset('Images/estelus-realty-high-resolution-logo-white-transparent.png') }}" alt="logo" class="block h-20 w-auto" />
+                        </div>
                         <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
                             <a href="#" class="text-gray-600">Topic</a>
                             <a href="#" class="text-gray-600">Topic</a>
@@ -146,7 +145,7 @@
                 </html>
 
 
-            </div>
-        </div>
-    </div>
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </div>--}}
 </x-app-layout>

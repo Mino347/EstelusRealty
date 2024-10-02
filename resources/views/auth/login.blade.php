@@ -1,19 +1,17 @@
 <x-app-layout>
     <x-authentication-card>
         <x-slot name="logo">
-{{--            <x-authentication-card-logo />--}}
+            <x-authentication-card-logo />
 
         </x-slot>
 
-        <div class="bg-cover bg-center" style="background-image: url('{{ asset('Images/login.png') }}');">
-            <div class="bg-white bg-opacity-75 p-8 rounded-lg shadow-lg">
 
-            <x-validation-errors class="mb-4" />
+        <x-validation-errors class="mb-4" />
 
         @session('status')
-            <div class="mb-4 font-medium text-sm text-green-600">
-                {{ $value }}
-            </div>
+        <div class="mb-4 font-medium text-sm text-green-600">
+            {{ $value }}
+        </div>
         @endsession
 
         <form method="POST" action="{{ route('login') }}">
@@ -50,6 +48,5 @@
                 </x-button>
             </div>
         </form>
-</div>
     </x-authentication-card>
 </x-app-layout>

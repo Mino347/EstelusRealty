@@ -41,29 +41,29 @@
 </div>
 
 <!-- Navigation Links -->
-<nav class="bg-white shadow">
-    <div class="max-w-7xl mx-auto py-4 px-4 sm:px-6 lg:px-8">
-        <div class="flex justify-between">
-            <!-- Left Side Of Navbar -->
-            <div>
-                <a href="{{ route('home') }}" class="text-gray-500 hover:text-gray-700">Home</a>
-            </div>
-            <!-- Right Side Of Navbar -->
-            <div>
-                @auth
-                    <a href="{{ url('/Home') }}" class="text-gray-500 hover:text-gray-700">Home</a>
-                    <!-- Add more authenticated links here -->
-                @endauth
-                @guest
-                    <a href="{{ route('login') }}" class="text-gray-500 hover:text-gray-700">Login</a>
-                    @if (Route::has('register'))
-                        <a href="{{ route('register') }}" class="ml-4 text-gray-500 hover:text-gray-700">Register</a>
-                    @endif
-                @endguest
-            </div>
-        </div>
-    </div>
-</nav>
+{{--<nav class="bg-white shadow">--}}
+{{--    <div class="max-w-7xl mx-auto py-4 px-4 sm:px-6 lg:px-8">--}}
+{{--        <div class="flex justify-between">--}}
+{{--            <!-- Left Side Of Navbar -->--}}
+{{--            <div>--}}
+{{--                <a href="{{ route('home') }}" class="text-gray-500 hover:text-gray-700">Home</a>--}}
+{{--            </div>--}}
+{{--            <!-- Right Side Of Navbar -->--}}
+{{--            <div>--}}
+{{--                @auth--}}
+{{--                    <a href="{{ url('/Home') }}" class="text-gray-500 hover:text-gray-700">Home</a>--}}
+{{--                    <!-- Add more authenticated links here -->--}}
+{{--                @endauth--}}
+{{--                @guest--}}
+{{--                    <a href="{{ route('login') }}" class="text-gray-500 hover:text-gray-700">Login</a>--}}
+{{--                    @if (Route::has('register'))--}}
+{{--                        <a href="{{ route('register') }}" class="ml-4 text-gray-500 hover:text-gray-700">Register</a>--}}
+{{--                    @endif--}}
+{{--                @endguest--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </div>--}}
+{{--</nav>--}}
 
 @stack('modals')
 

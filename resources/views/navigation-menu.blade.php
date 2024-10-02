@@ -1,7 +1,7 @@
-<nav x-data="{ open: false }" class="bg-transparent border-b border-gray-100">
+<nav x-data="{ open: false }" class="bg-white border-b border-gray-100">
     <!-- Primary Navigation Menu -->
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex justify-between h-30">
+    <div class="mx-auto sm:px-6">
+        <div class="flex justify-between h-20">
             <div class="flex">
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
@@ -11,7 +11,7 @@
                 </div>
 
                 <!-- Navigation Links -->
-                <div class="hidden space-x-16 sm:-my-px sm:ms-20  sm:flex ">
+                <div class="hidden space-x-16 sm:-my-px sm:ms-20 sm:flex ">
                     <ul class="list-reset lg:flex justify-start flex-1 items-center">
 
 
@@ -20,24 +20,30 @@
                                 <ul class="list-reset lg:flex justify-end flex-1 items-center py-8">
                                     @auth
                                         <a
-                                            href="{{ url('/dashboard') }}"
+                                            href="{{ url('/home') }}"
                                             class="rounded-md px-8 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20]"
                                         >
                                             Home
                                         </a>
 
                                         <a
-                                            href="{{ url('houses') }}"
+                                            href="{{ url('properties') }}"
                                             class="rounded-md px-8 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20]"
                                         >
                                             Properties
                                         </a>
 
+{{--                                        <a--}}
+{{--                                            href="{{ url('/agents') }}"--}}
+{{--                                            class="rounded-md px-8 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20]"--}}
+{{--                                        >--}}
+{{--                                            Agents--}}
+{{--                                        </a>--}}
                                         <a
-                                            href="{{ url('/agents') }}"
+                                            href="{{ url('/marketTrends') }}"
                                             class="rounded-md px-8 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20]"
                                         >
-                                            Agents
+                                            Market Trends
                                         </a>
 
 
