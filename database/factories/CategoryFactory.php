@@ -20,7 +20,7 @@ class CategoryFactory extends Factory
             'title' => $this->faker->sentence,
             'slug'  => $this->faker->unique()->slug,
             'description' => $this->faker->sentence,
-            'status' => $this->faker->boolean
+           // 'status' => $this->faker->boolean
         ];
     }
 }

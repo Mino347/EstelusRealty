@@ -1,23 +1,19 @@
-<x-app-layout>
+<x-guest-layout>
     <x-authentication-card>
         <x-slot name="logo">
             <x-authentication-card-logo />
-
         </x-slot>
-
 
         <x-validation-errors class="mb-4" />
 
         @session('status')
-        <div class="mb-4 font-medium text-sm text-green-600">
-            {{ $value }}
-        </div>
+            <div class="mb-4 font-medium text-sm text-green-600">
+                {{ $value }}
+            </div>
         @endsession
 
         <form method="POST" action="{{ route('login') }}">
             @csrf
-
-            <h2 class="text-4xl font-semibold text-center mb-6">Log In</h2>
 
             <div>
                 <x-label for="email" value="{{ __('Email') }}" />
@@ -49,4 +45,4 @@
             </div>
         </form>
     </x-authentication-card>
-</x-app-layout>
+</x-guest-layout>

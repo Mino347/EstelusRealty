@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\HouseController;
+use App\Http\Controllers\PropertyTypeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\PropertyController;
@@ -23,11 +24,18 @@ Route::get('/', function (){
      ->name('index', 'houses');
 
 Route::resource('categories', CategoryController::class)
-    -> middleware(['auth','verified']);
+    -> middleware(['auth','verified'])
+    ->name('index', 'categories');
 
 Route::resource('properties', PropertyController::class)
     -> middleware(['auth','verified'])
     ->name('index', 'properties');
+
+Route::resource('propertytype', PropertyTypeController::class)
+    -> middleware(['auth','verified'])
+    ->name('index', 'propertytype')
+
+;
 
 
 Route::middleware([
@@ -55,3 +63,14 @@ Route::middleware([
 
 Route::get('/admin/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
 
+Route::get('/admin/propertytype', [PropertyTypeController::class, 'index'])->name('admin.propertytype.index');
+
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified',
+])->group(function () {
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
+});

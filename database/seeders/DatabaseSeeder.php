@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 //use App\Models\House;
+use App\Models\PropertyType;
 use App\Models\User;
 use App\UserRole;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
@@ -31,6 +32,7 @@ class DatabaseSeeder extends Seeder
             'password' => bcrypt('customer123'),
             //'role' => UserRole::Customer,  // Using enum case
         ]);
+
 
 
 

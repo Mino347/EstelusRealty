@@ -1,18 +1,13 @@
-<x-app-layout>
+<x-guest-layout>
     <x-authentication-card>
         <x-slot name="logo">
             <x-authentication-card-logo />
         </x-slot>
 
-{{--        <div class="bg-cover bg-center" style="background-image: url('{{ asset('Images/login.png') }}');">--}}
-{{--            <div class="bg-white bg-opacity-75 p-8 rounded-lg shadow-lg">--}}
-
-            <x-validation-errors class="mb-4" />
+        <x-validation-errors class="mb-4" />
 
         <form method="POST" action="{{ route('register') }}">
             @csrf
-
-            <h2 class="text-4xl font-semibold text-center mb-6">Register</h2>
 
             <div>
                 <x-label for="name" value="{{ __('Name') }}" />
@@ -33,7 +28,6 @@
                 <x-label for="password_confirmation" value="{{ __('Confirm Password') }}" />
                 <x-input id="password_confirmation" class="block mt-1 w-full" type="password" name="password_confirmation" required autocomplete="new-password" />
             </div>
-
 
             @if (Laravel\Jetstream\Jetstream::hasTermsAndPrivacyPolicyFeature())
                 <div class="mt-4">
@@ -63,4 +57,4 @@
             </div>
         </form>
     </x-authentication-card>
-</x-app-layout>
+</x-guest-layout>

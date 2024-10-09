@@ -23,7 +23,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        //
+        return view('categories.create');
     }
 
     /**
@@ -31,7 +31,16 @@ class CategoryController extends Controller
      */
     public function store(StoreCategoryRequest $request)
     {
-        //
+        //get the validated data
+        $validated = $request->validated();
+
+        //create the slug
+        $validated['slug'] = \Str::slug($validated['title']);
+
+        Category::create($validated);
+
+        return redirect()->route('categories')
+            ->with('flash.banner', 'Category created successfully!');
     }
 
     /**
@@ -39,7 +48,9 @@ class CategoryController extends Controller
      */
     public function show(Category $category)
     {
-        //
+        return view('categories.show', [
+            'category' => $category
+        ]);
     }
 
     /**
@@ -57,7 +68,17 @@ class CategoryController extends Controller
      */
     public function update(UpdateCategoryRequest $request, Category $category)
     {
-        dd($request, $category);
+        //dd($request, $category);
+        $category->update($request->validated());
+
+        $validated = $request->validated();
+        $validated['slug'] = \Str::slug($validated['title']);
+        $category->update($validated);
+
+        return redirect()->route('categories.index')
+            ->with('flash.banner', 'Category updated successfully!');
+
+
     }
 
     /**
@@ -65,6 +86,13 @@ class CategoryController extends Controller
      */
     public function destroy(Category $category)
     {
-        //
+        $model = $category;
+
+        $category->delete();
+
+        session()->flash('flash.bannerStyle', 'danger');
+
+        return redirect()->route('categories')
+            ->with('flash.banner', $model->title . ' Category deleted successfully!');
     }
 }
